@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-toast": "^1.1.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "i18next": "^23.11.5",
@@ -28,6 +29,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "i18next-resources-to-backend": "^1.2.1",
+    "next-i18n-router": "^5.5.0",
     "postcss": "^8",
     "secure-ls": "^1.2.6",
     "tailwindcss": "^3.4.1",
