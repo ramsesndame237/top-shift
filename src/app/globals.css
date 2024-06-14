@@ -72,6 +72,11 @@ html {
     font-family: "Lexend", sans-serif;
 }
 
+swiper-container {
+    dispaly: flex;
+}
+
+
 @layer base {
     * {
         font-family: "Lexend", sans-serif;
