@@ -44,7 +44,7 @@ class AppService {
             headers: headers,
             mode: 'cors',
             cache: 'default',
-            body: body instanceof FormData ? body : JSON.stringify(body),
+            ...(method.toUpperCase() === 'GET'  ? {} : {body: body instanceof FormData ? body : JSON.stringify(body)} ),
         };
 
         try {

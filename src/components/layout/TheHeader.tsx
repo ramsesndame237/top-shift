@@ -2,8 +2,8 @@ import SearchInputWidget from "@/components/layout/widgets/SearchInputWidget";
 
 const TheHeader = (props: any) => {
     return (
-        <header className="grid grid-cols-2 w-full h-28just  ">
-            <div className={'flex py-4 pl-6'}>
+        <header className="grid grid-cols-2 w-full h-28 gap-x-10 pb-4  ">
+            <div className={'flex items-center justify-center  py-4 gap-x-2 pl-6'}>
                 <img src="/static/icons/menu.svg" alt="menu amburger" loading="lazy"/>
                 <div>
                     <img src="/static/images/Logo.png" alt="logo the top sheft"/>
