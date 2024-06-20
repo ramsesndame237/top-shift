@@ -18,6 +18,8 @@ import {useEffect, useState} from "react";
 import SecureLS from "secure-ls";
 import {useCart} from "@/app/[locale]/(pages)/hooks/cartHooks";
 import useCartStore from "@/store/cart.store";
+import {Title} from "@/components/common/Title";
+import {LoadingSpinner} from "@/components/common/Loader";
 
 const ls = new SecureLS({encodingType: 'aes'});
 
@@ -32,27 +34,17 @@ const CardDrawer = ({open, onClose,}: {
     const {data: cartData, isLoading} = useCart(user?.id)
     const {cart} = useCartStore()
 
-    useEffect(() => {
-
-    }, [cart]);
     return (
         <Sheet open={open} onOpenChange={onClose}>
-            <SheetTrigger asChild>
-                <Button variant="outline">Open</Button>
-            </SheetTrigger>
-            <SheetContent side={'right'} className={'w-full'}>
+
+            <SheetContent  side={'right'} className={'md:w-[800px]  md:!max-w-2xl '}>
                 <div className="grid gap-4 py-4">
 
+                   <Title title={t('translate_key_title_cart')}  />
                     <div>
-                        {t('translate_key_filter')}
-                    </div>
-                    <div>
-                        <h4>
-                            {t('translate_key_product_catogry')}
-                        </h4>
                         <div>
                             {
-                                isLoading ? <p>is loaidng</p> : (cartData?.carts.products ?? []).length !== 0 ?
+                                isLoading ? <LoadingSpinner className={'size-40 text-primary'} /> : (cartData?.carts.products ?? []).length !== 0 ?
                                     <AnimatedList>
 
                                         {
@@ -79,7 +71,7 @@ const CardDrawer = ({open, onClose,}: {
                                             ))
                                         }
                                     </AnimatedList> :
-                                    <div className={'w-full h-screen flex items-center justify-center'}>
+                                    <div className={'w-full min-h-96 flex items-center justify-center'}>
                                         <div
                                             className={'size-40 rounded-full bg-green-200 flex items-center justify-center p-8'}>
                                             <img className={'w-full h-full object-contain'}
@@ -91,7 +83,7 @@ const CardDrawer = ({open, onClose,}: {
                         </div>
                     </div>
                 </div>
-                <SheetFooter>
+                <SheetFooter >
                     <button className={'bg-primary text-white  h-14 w-full'}>
                         {t('translate_key_cart_save')}
                     </button>

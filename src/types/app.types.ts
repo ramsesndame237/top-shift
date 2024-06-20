@@ -10,15 +10,7 @@ export interface ProductData {
     limit:    number;
 }
 export interface CartData {
-    carts: {
-        id:number,
-        products:Product[],
-        "total": number,
-        "discountedTotal": number,
-        "userId": number,
-        "totalProducts": number,
-        "totalQuantity": number
-    };
+    carts:Cart ;
     total:    number;
     skip:     number;
     limit:    number;
@@ -70,4 +62,14 @@ export interface Review {
     date:          Date;
     reviewerName:  string;
     reviewerEmail: string;
+}
+
+export interface Cart {
+    id:number,
+    products:Product[],
+    "total": number,
+    "discountedTotal": number,
+    "userId": number,
+    "totalProducts": number,
+    "totalQuantity": number
 }
