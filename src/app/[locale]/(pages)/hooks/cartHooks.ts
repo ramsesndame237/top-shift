@@ -1,22 +1,21 @@
-import {Categories} from "@/types/app.types";
+import {CartData, Categories} from "@/types/app.types";
 import ApiService from "@/services/ApiService";
-import {CategoryUrls, ProductUrls} from "@/services/urls";
 import {useQuery, useQueryClient} from "@tanstack/react-query";
 import {useTranslation} from "react-i18next";
+import {CartUlrs} from "@/services/urls";
 
 
-export let useCategory = () => {
+export let useCart = (id:number) => {
 
     const queryClient = useQueryClient();
     const {t} = useTranslation('common');
 
-    return useQuery<string[], Error>(
+    return useQuery<CartData, Error>(
         {
-            queryKey: ['categories'], queryFn: async () => {
+            queryKey: ['cartuserList'], queryFn: async () => {
                 let data;
                 try {
-                    console.log("this is the data")
-                    const response = await ApiService.getRequest(CategoryUrls.GET_ALL_PRODUCT_CATEGORIES_LIST, false)
+                    const response = await ApiService.getRequest(CartUlrs.CART_GET_USER_PRODUCT(id), false)
                     data = await response.json()
                     if ([200, 201].includes(response.status)) {
                         return data

@@ -27,10 +27,10 @@ export const ServicesSection = () =>{
         },
     ]
     return(
-        <div className={'space-y-8 bg-[#F2F6F4] '}>
+        <div className={'space-y-8 md:px-4 bg-[#F2F6F4] md:flex md:justify-between md:items-center'}>
             {
                 serviceData.map((service:ServiceInterface,index)=>(
-                    <div className="min-h-[147px] flex w-[342px] gap-x-6" key={index}>
+                    <div className="min-h-[147px] md:min-h-[172px] flex w-[342px] md:w-[416px] gap-x-6" key={index}>
                         <div>
                             <div className="size-16 bg-white rounded-full shadow-sm flex items-center justify-center">
                                 <img src={`/static/icons/${service.icon}.svg`} alt=""/>
@@ -38,7 +38,7 @@ export const ServicesSection = () =>{
 
                         </div>
                         <div>
-                            <h4 className={'text-xl text-[#1A1E26] font-bold'}>
+                            <h4 className={'text-xl md:text-2xl md:mb-4 text-[#1A1E26] font-bold'}>
                                 {t(service.title)}
                             </h4>
                             <p className={'text-sm font-normal text-[#717378]'}>

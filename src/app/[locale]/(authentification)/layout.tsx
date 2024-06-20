@@ -20,8 +20,8 @@ export default async function layout({ children, params: {locale} }: LayoutProps
     const {resources} = await initTranslations(locale, TRANSlATIONS_NAMESPACES)
     return (
         <html lang={locale} dir={dir(locale)}>
-        <body className={cn(inter.className, "w-full flex items-center justify-center bg-white")}>
-        <div className="w-full max-w-[1728px] mx-auto">
+        <body className={cn(inter.className, "w-full flex justify-center bg-white")}>
+        <div className="w-full max-w-[1728px]">
             <TanstackProvider>
                 <TranslationProvider
                     locale={locale}

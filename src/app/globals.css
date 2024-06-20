@@ -85,6 +85,6 @@ swiper-container {
 
     body {
         font-family: "Lexend", sans-serif;
-        @apply bg-background text-foreground;
+        @apply bg-white text-foreground;
     }
 }

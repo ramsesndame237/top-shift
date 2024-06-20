@@ -12,36 +12,23 @@ const page = () => {
     return (
         <>
             <section
-                className="min-h-screen flex flex-col  bg-[url('/static/images/bg_images.png')] bg-center bg-cover over pt-14 px-6">
+                className="min-h-screen md:px-16 flex flex-col  md:bg-[url('/static/images/bg_images_md.png')] bg-[url('/static/images/bg_images.png')] bg-center bg-cover md:bg-right  bg-no-repeat  py-14 px-6 overflow-x-hidden">
                 <HeroSection/>
-                <div className="w-full flex-grow relative  ">
-                    {
-                        Array.from(Array(3).keys()).map((_, i) => (
-                            <div
-                                className={cn('size-[108px] absolute', (i + 1) === 1 ? 'left-1/3' : (i + 1) === 2 ? 'top-1/3 right-3' : 'bottom-1/4 -left-6')}
-                                key={i}>
-                                <img src={`/static/images/paquet_${i + 1}.png`} alt="paquet produit"/>
-                            </div>
-                        ))
-                    }
-
-                </div>
             </section>
-            <section className="h-auto bg-[#F2F6F4] py-16 px-2  ">
+            <section className="h-auto bg-[#F2F6F4] py-16 px-2  overflow-x-hidden">
                 <ServicesSection/>
             </section>
-            <section className={'h-auto bg-white px-3.5 font-semibold'}>
+            <section className={'h-auto md:py-20 bg-white px-3.5 font-semibold overflow-x-hidden'}>
                 <BestDispensary/>
             </section>
-            <section className={'px-2'}>
-                <Testimonial/>
-            </section>
-            <section className={'px-2'}>
+            <section className={'px-2 bg-white  md:py-20 h-auto overflow-x-hidden'}>
                 <ProductSelect/>
             </section>
-            <section className={'px-2 bg-primary min-h-screen relative'}>
-                <HolderSection></HolderSection>
-
+            {/*<section className={'px-2 bg-primary min-h-screen relative'}>*/}
+            {/*    <HolderSection></HolderSection>*/}
+            {/*</section>*/}
+            <section className={'px-2 overflow-x-hidden'}>
+                <Testimonial/>
             </section>
         </>
     )
